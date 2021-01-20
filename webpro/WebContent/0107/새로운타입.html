@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css" type="text/css">
+
+<style>
+	form{
+		border : 3px solid green;
+		padding : 20px;
+	}
+	fieldset{
+		border : 4px dotted pink;
+		margin : 20px;
+		padding : 20px;
+	}
+	legend{
+		font-size : 1.2em;
+		font-weight : bold;
+	}
+</style>
+
+<script type="text/javascript">
+	
+	//함수정의 (function으로 시작, 스크립트는 변수 타입 작성하지 않음, 변수 앞에 var 쓴다)
+	function change(){
+		//html color 요소로 접근하기
+		var vcol = document.getElementById('col');
+		
+		//접근요소에서 값 가져오기
+		var vvalue = vcol.value;
+		
+		//가져온 값으로 pre요소의 배경색을 변경(background-color를 backgroundColor표현)
+		var vpre = document.getElementById('pr1');
+		vpre.style.backgroundColor = vvalue;
+	}
+		
+</script>
+
+</head>
+<body>
+<pre>
+ 	이메일 형식 체크를 해주지 않기 때문에 그냥 타입=텍스트로 써도됨
+ 	&lt;input type="email" name="email">
+ 	tel형식도 text형식과 같다.(쓸 필요없음)
+ 	&lt;input type="tel">
+</pre>
+	<form action="1.jsp" method="post" onsubmit="return false;">
+		<fieldset>
+        <legend>이메일 입력</legend>
+		이메일1<input type="text" name="email"><br> 
+		이메일2<input type="email" name="email"><br> 
+		<input type="submit">
+		</fieldset>
+		
+		
+		<pre>
+			pattern 속성: 데이터의 입력형식 또는 규칙을 정의한다.
+			전화번호 정규식 => pattern="\d{3}-\d{4}-\d{4}"
+		</pre>
+		<fieldset>
+			<legend>전화번호 입력</legend>
+			전화번호1-text<input type="text" name="tel"><br> 
+			전화번호2-tel<input type="tel" name="tel"><br> 
+			전화번호3-text(pattern)<input type="text" name="tel" pattern="\d{3}-\d{4}-\d{4}"><br> 
+			생년월일<input type="text" name="bir"><br> 
+			생년월일<input type="date" name="bir"><br>
+			홈페이지주소<input type="url">
+			<input type="submit">
+		</fieldset>
+		
+		<pre id="pr1">
+			* html요소를 script에서 접근해야한다.
+			 1.색상의 id를 이용한 접근
+			 	vcol = document.getElementById('col')
+			 2.접근 요소에서 값을 가져오기
+			 	vvalue = vcol.value;
+			 3.pre요소 접근
+			 	vpre = document.getElementById('pr1');
+			 4.vpre의 style 변경(배경색 바꾸기)
+			 	vpre.style.backgroundColor = vvalue;
+		</pre>
+		<fieldset>
+			<legend>선택</legend>
+			색상선택<input type="color" id="col">
+				 <input type="button" value="확인" onclick="change()">
+				
+				<br><br>
+				신발사이즈<input type="number" min="230" max="290" step="5" value="230"> <br>
+				<input type="range" min="230" max="290" step="5" value="230">
+				
+				<br><br>
+				
+		</fieldset>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

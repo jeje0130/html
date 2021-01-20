@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="1.jsp" method="post" onsubmit="return false;">
+	<label>이름</label><input type="text" name="name"><br> 
+    <label>주소</label><input type="text" name="addr"><br>
+    <label>이메일</label><input type="text" name="email"><br>
+    <input type="radio" name="gender" value="남자">남성<br>
+	<input type="radio" name="gender" value="여자">여성<br>
+	<br>
+	<input type="submit" value="Send">
+	<input type="reset" value="원래대로">
+       	
+</form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css" type="text/css">
+<style type="text/css">
+	span{
+		font-size: 1.3em;
+		color : red;
+	}
+</style>
+<script type="text/javascript">
+	function calc() {
+		
+		//방법1)입력한 값 가져오기 - value
+		a = document.getElementById("x").value;
+		b = document.getElementById("y").value;  // .value : get 역할
+		
+		//방법2)입력한 값 가져오기 - value
+		//a = document.querySelector("#x").value;
+		//b = document.querySelector("#y").value;
+		
+		xvalue = parseInt(a);
+		yvalue = parseInt(b);
+		
+		hap = xvalue + yvalue;
+		
+		//출력
+		document.getElementById("sum").value=hap; //.value : set 역할
+		//document.querySelector("#sum").value=hap; 
+	}
+</script>
+
+</head>
+<body>
+<pre>
+	입력요소(input)에 입력한 값을 scirpt에서 사용하기
+	a = document.getElementById("x").<span>value</span>;
+	b = document.getElementById("y").<span>value</span>;
+	
+	x = parseInt(a);
+	y = parseInt(b);
+	
+	hap = x + y;
+	
+	document.getElementById("sum").<span>value=</span>hap;
+</pre>
+
+
+첫번째 수<input type="text" id="x"><br>
+두번째 수<input type="text" id="y"><br>
+<br>
+<input type="button" value="확인" onclick="calc()">
+<br><br>
+결과<input type="text" id="sum"><br>
+</body>
+</html>

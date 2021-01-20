@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css" type="text/css">
+
+<style type="text/css">
+	p{
+		font-size : 1.5em;
+	}
+	p:hover{
+		color : red;
+	}
+	p:active{
+		background : pink;
+	}
+	p[title] {
+		background : orange;
+	}
+	p[title=무궁화] {
+		color : blue;
+	}
+	p[class=pp]{      /* p[class=pp]  =  p.pp */
+		font-weight : bold;
+		font-size : 2.0em;
+	}
+	span{
+		color : red;
+		font-size : 1.3em;
+	}
+</style>
+</head>
+<body>
+
+<pre>
+	속성 선택자
+	
+	p{
+		font-size : 1.5em;
+	}
+	p:hover{
+		color : red;
+	}
+	p:active{
+		background : pink;
+	}
+	<span>p[title]</span> {     //1, 2번 선택
+		background : orange;
+	}
+	<span>p[title=무궁화]</span> {   // 1번만 선택
+		color : blue;
+	}
+	<span>p[class=pp]</span> {      //1, 3번 선택        /* p[class=pp]  =  p.pp */
+		font-weight : bold;
+		font-size : 2.0em;
+	}
+</pre>
+
+<p class="pp" title="무궁화">무궁화 꽃이 피었습니다</p>
+<p title="함박눈">함박눈이 펑펑 내려옵니다</p>
+<p class="pp">온 세상이 하얗게 변했습니다</p>
+
+</body>
+</html>

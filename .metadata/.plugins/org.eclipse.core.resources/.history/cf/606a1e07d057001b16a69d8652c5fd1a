@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	div{
+		border: 1px solid #c8c8c8;
+		width: 340px;
+		height: 500px;
+		margin : 3px;
+		padding : 10px;
+		box-sizing : border-box;
+		background: #FFFFFF;
+	}
+	
+	#d1 {
+		float: left;
+	}
+	#d2 {
+		float: left;
+	}
+	#d3 {
+		float: left;
+	}
+	div img{
+		width: 260px;
+		height: 260px;
+		vertical-align: middle;
+		display: block; 
+		margin: 0px auto;
+	}
+	audio{
+		width: 220px;
+		margin-left : 25px;
+		margin-right: 25px;
+	}
+	input{
+		background-image: linear-gradient(white, #d2d2d2);
+		margin-left : 25px;
+		margin-right: 25px;
+	}
+	p{
+		margin-left : 25px;
+		margin-right: 25px;
+	}
+</style>
+
+</head>
+<body>
+
+<div id="d1">
+<img alt="2002" src="../images/Anne-Marie(앤마리)-2002.jpg">
+<p> Anne-Marie(앤마리)-2002 Anne-Marie~!!</p>
+<br>
+<audio controls>
+	<source src="../multi/old_pop.mp3" type="audio/mp3">
+</audio>
+<br><br>
+<input type="button" value="쇼핑카트에 추가하기">
+</div>
+
+<div id="d2">
+<img alt="소우주" src="../images/소우주.jpg">
+<p> 방탄소년단(BTS) - 소우주 (Mikrokosmos)</p>
+<br>
+<audio controls>
+	<source src="../multi/old_pop.mp3" type="audio/mp3">
+</audio>
+<br><br>
+<input type="button" value="쇼핑카트에 추가하기">
+</div>
+
+
+<div  id="d3">
+<img alt="달라달라" src="../images/음악1.jpg">
+<p> ITZY - 달라달라 'JYP' 5인조 신인 걸그룹 데뷔!</p>
+<br>
+<audio controls>
+	<source src="../multi/old_pop.mp3" type="audio/mp3">
+</audio>
+<br><br>
+<input type="button" value="쇼핑카트에 추가하기">
+</div>
+
+</body>
+</html>

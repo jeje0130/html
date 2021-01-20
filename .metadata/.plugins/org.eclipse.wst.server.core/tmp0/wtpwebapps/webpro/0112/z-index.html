@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css" type="text/css">
+<style type="text/css">
+	div{
+		width: 100px;
+		height: 100px;
+		margin: 10px;
+		border: 2px solid gray;
+		position: absolute;
+	}
+	#d1{
+		background: skyblue;
+		top: 100px;
+		left: 0px;
+		z-index: 10;
+	}
+	#d2{
+		background: yellow;
+		top: 130px;
+		left: 30px;
+	    z-index: 12;
+		
+		
+	}
+	#d3{
+		background: coral;
+		top: 160px;
+		left: 60px;
+		z-index: 11;
+	}
+	hr{
+		position: absolute;
+		top: 300px;
+		left: 10px;
+		width: 100%;
+	}
+</style>
+
+</head>
+<body>
+<pre>
+	div{ position: absolute; }
+	#d1{ z-index: 10; background: yellow; }    
+	#d2{ z-index: 12; background: skyblue; }
+	#d3{ z-index: 11; background: coral; }
+	z-index : 숫자가 커질수록 위쪽에 위치함
+</pre>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<hr color='red'>
+
+</body>
+</html>

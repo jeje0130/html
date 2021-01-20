@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	div{
+		border: 2px solid gray;
+		width: 200px;
+		height: 450px;
+		margin : 3px;
+		padding : 10px;
+		box-sizing : border-box;
+		background: #FFFFFF;
+	}
+	
+	#d1 {
+		float: left;
+	}
+	#d2 {
+		float: left;
+	}
+	#d3 {
+		float: left;
+	}
+	div img{
+		width: 180px;
+		height: 180px;
+		vertical-align: middle;
+	}
+</style>
+
+</head>
+<body>
+
+<div id="d1">
+<img alt="옷1" src="../images/옷1.jpg">
+<p> 
+후리스 점퍼 자켓 <br>
+보아퍼 플리스 니트 후드 집업 양털 기모 후리스 점퍼 자켓 S~XL 여성 남성 단체
+선물하기로 구매 시 OK캐쉬백 최대 3,000P 적립, 11번가 신한카드 첫 결제할인 + 최대 2% 적립
+</p>
+<input type="button" value="쇼핑카트에 추가하기">
+</div>
+
+<div id="d2">
+<img alt="옷2" src="../images/옷2.jpg">
+<p> 
+기모 맨투맨 후드티 <br>
+신상 기모 맨투맨 후드티 후드집업 ~3XL
+SK pay point 597P 적립
+선물하기로 구매 시 OK캐쉬백 최대 3,000P 적립
+11번가 신한카드 첫 결제할인 + 최대 2% 적립
+
+</p>
+<input type="button" value="쇼핑카트에 추가하기">
+</div>
+
+</body>
+</html>

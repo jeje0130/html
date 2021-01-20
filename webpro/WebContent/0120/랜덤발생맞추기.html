@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script>
+
+rand = Math.floor(Math.random()*100 + 1);
+count = 0;
+str = ""; //입력한 수를 나열하기 위한 변수
+
+function proc1() {
+		//입력한 값 가져오기
+		suvalue = document.getElementById('su').value;
+		
+		//입력횟수
+		count++;
+		
+		//입력한 수를 문자로 더하기
+		str += suvalue + " ";
+		
+		//출력모양
+		res = "";
+		
+		//비교
+		if(suvalue == rand){
+			res += `횟수 : ${count}  <br>`;
+			res += `${str} <br>`;
+			res += "맞췄습니다";
+		}else if(suvalue > rand){
+			res += "더 작은수를 입력하세요";
+		}else{
+			res += "더 큰 수를 입력하세요";
+		}
+		
+		//출력
+		document.getElementById('result1').innerHTML = res;
+}
+</script>
+<style>
+</style>
+</head>
+<body>
+
+<div class="box">
+	1. 1부터 10 사이의 랜덤숫자를 발생한다.<br>
+	2. 수를 입력하여 랜덤값을 맞춘다.<br>
+	3. 맞출때까지의 횟수를 구하고 입력한 값들을 나열한다.<br>
+ <br><br>
+수입력 <input type="text" id="su">
+<input type="button" value="확인" onclick="proc1()">
+
+<div id="result1"></div>
+</div>
+</body>
+</html>

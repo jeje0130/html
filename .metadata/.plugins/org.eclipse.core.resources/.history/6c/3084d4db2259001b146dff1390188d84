@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script>
+//arr = new Array("사과","복숭아","참외","포도","자두")
+arr = ["사과","복숭아","참외","포도","자두"]
+
+function proc1() {
+	item = "포도";
+	idx = arr.indexOf(item);
+	
+	alert(`${item}는   ${idx} 번째 있습니다`)
+}
+</script>
+<style>
+</style>
+</head>
+<body>
+
+<div class="box">
+	
+ <br><br>
+	
+<input type="button" value="indexOf" onclick="proc1()">
+<input type="button" value="lastindexOf" onclick="proc2()">
+
+<div id="result1"></div>
+<div id="result2"></div>
+</div>
+</body>
+</html>

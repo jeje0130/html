@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+
+<style>
+</style>
+
+<script>
+   var circle = { 
+         //속성
+         rad : 5,
+         
+         //메소드
+         getArea : function(){
+            var area = 2 * 3.14 * this.rad;
+            return area;
+         },
+         getCircum : function(){
+            var circum = Math.PI * Math.pow(this.rad,2); /* 3.14 * this rad* this.rad; */
+            return circum;
+         }
+   }
+   
+function proc1(){
+   
+      print('#result1');
+   }
+   
+
+function print(out){
+   
+   res = `반지름: ${circle.red} <br>`
+   
+   a= circle.getArea();
+   res += `면적 : ${a} <br>`
+      
+   res += `둘레 : ${circle.getCircum()} <br>`
+   
+   result = document.querySelector(out);
+   result.innerHTML = res;
+}   
+   
+   
+function proc2(){
+      
+   a = prompt("반지름 입력 ");
+   
+   circle.rad = a;
+   
+   print('#result2');
+   }
+   
+   
+</script>
+
+</head>
+<body>
+<div class="box">
+   
+   <br><br>
+   
+  <input type="button" value="확인" onclick="proc1()">
+  <input type="button" value="변경" onclick="proc2()">
+  
+  <div id = "result1"></div>
+  <div id = "result2"></div>
+  </div>
+</body>
+</html>

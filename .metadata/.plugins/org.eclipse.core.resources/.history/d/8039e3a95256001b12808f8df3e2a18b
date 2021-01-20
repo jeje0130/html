@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	form{
+		border : none;
+		padding : 5px;
+		width : 500px;
+		background: #d2d2d2
+	}
+	table{
+		border : 2px solid gray;
+		margin : 3px; 
+		border-collapse: collapse;
+		text-align : center;
+		}
+	th{
+		width : 100px;
+		height : 20px;
+	}
+	#th2{
+    	width : 200px;
+    }
+    td{
+    	height : 30px;
+    	text-align : center;
+    }
+    caption{
+    	font-size : 1.2em; 
+    	margin : 1px;
+    	caption-side : top;
+    	text-decoration: underline;
+    	color : red;
+    }
+    #in1{
+    	width : 150px;
+    }
+    #in2{
+    	width : 85px;
+    }
+    #in3{
+    	background-image: linear-gradient(white, #d2d2d2);
+    	background-image: 
+    }
+		
+</style>
+</head>
+<body>
+<form action="">
+<table border = "1">
+	<caption> Shopping Cart</caption>
+	<tr>
+		<th>품목</th>
+		<th>가격</th>
+		<th id="th2">수량</th>
+		<th>합계</th>
+	</tr>
+	
+	<tr>
+		<td>컴퓨터 세트</td>
+		<td>2,000,000원</td>
+		<td><input id="in1" type="number" min="0" max="10" step="1" value="0"></td>
+		<td><input id="in2" type="text" value="0"></td>
+	</tr>
+	
+	<tr>
+		<td>티셔츠</td>
+		<td>50,000원</td>
+		<td><input id="in1" type="number" min="0" max="10" step="1" value="0"></td>
+		<td><input id="in2" type="text" value="0"></td>
+	</tr>
+	
+	<tr>
+		<td>음악파일</td>
+		<td>1,000원</td>
+		<td><input id="in1" type="number" min="0" max="10" step="1" value="0"></td>
+		<td><input id="in2" type="text" value="0"></td>
+	</tr>
+	
+	<tr>
+		<td>영화파일</td>
+		<td>5,000원</td>
+		<td><input id="in1" type="number" min="0" max="10" step="1" value="0"></td>
+		<td><input id="in2" type="text" value="0"></td>
+	</tr>
+</table>
+<input id="in3" type="submit" value="계산">
+<input id="in3" type="submit" value="구매">
+<input id="in3" type="reset" value="초기화">
+<br><br>
+<a href="main.html">Back to Home</a>
+</form>
+</body>
+</html>
+
+
+

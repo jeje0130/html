@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table{
+		border : 3px solid blue;
+		margin : 30px auto; 
+		empty-cells: hide; /*hide:빈칸 안보임,  show:빈칸 보임 */
+		border-collapse: collapse;
+		}
+	th{
+		width : 200px;
+		height : 60px;
+	}
+	.th2{
+    	width : 800px;
+    }
+    .th3{
+    	text-align : left;
+    	padding : 10px 20px;	 /* padding : 칸 내부 여백 */
+    }
+    td{
+    	height : 40px;
+    	text-align : center;
+    }
+    caption{
+    	font-size : 1.2em; 
+    	margin : 20px auto;
+    	caption-side : top;
+    }
+		
+</style>
+</head>
+<body>
+
+<table border = "1">
+	<caption> Shopping Cart</caption>
+	<tr>
+		<th>품목</th>
+		<th>가격</th>
+		<th>수량</th>
+		<th>합계</th>
+	</tr>
+	
+	<tr>
+		<td>컴퓨터 세트</td>
+		<td>2,000,000원</td>
+		<td><input type="number" min="1" max="10" step="1" value="0"></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td>바이올린</td>
+		<td>홍길동</td>
+		<td>H28</td>
+		<td>200,000원</td>
+	</tr>
+	
+	<tr>
+		<td>성악아카데미</td>
+		<td>김호성</td>
+		<td>H30</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td>성악아카데미</td>
+		<td>김호성</td>
+		<td>H30</td>
+		<td></td>
+	</tr>
+	
+</table>
+</body>
+</html>

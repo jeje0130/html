@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script>
+	function circle(rad) {
+		this.rad = rad;
+		
+		this.getArea = function() {
+			var area = 2 * Math.PI * this.rad;
+            return area;
+		};
+		
+		this.getCircum = function() {
+			var circum = Math.PI * Math.pow(this.rad,2);
+			return circum;
+		};
+	}
+	
+	function proc1() {
+		name = "동그라미"
+		cir = new circle(5);
+		cir.name = name
+		print(cir, "#result1", name)
+		
+	}
+	
+	function print(cir1, out, name) {
+		res = "";
+		
+		if(name != undefined){
+			res = `이름:  ${cir1.name} <br>`;
+		}
+		
+		res = `반지름 : ${cir1.rad} <br>`;
+		
+		res += `면적 : ${cir1.getArea()} <br>`;
+		res += `둘레 : ${cir1.getCircum()} <br>`;
+		
+		result = document.querySelector(out);
+		result.innerHTML = res;
+		
+	}
+
+</script>
+<style>
+</style>
+</head>
+<body>
+
+<div class="box">
+생성자를 이용한 circle 객체 생성	
+ <br><br>
+	
+<input type="button" value="확인" onclick="proc1()">
+<input type="button" value="확인" onclick="proc2()">
+
+<div id="result1"></div>
+<div id="result2"></div>
+</div>
+</body>
+</html>

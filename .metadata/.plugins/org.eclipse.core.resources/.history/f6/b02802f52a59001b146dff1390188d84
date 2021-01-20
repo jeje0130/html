@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script>
+//arr = new Array("사과","복숭아","참외","포도","자두")
+arr = ["사과","복숭아","참외","포도","자두","사과","메론","자몽","사과"]
+
+function proc1() {
+	item = prompt("과일을 입력하세요");
+	idx = arr.indexOf(item);
+	
+	//alert(`${item}는   ${idx} 번째 있습니다`)
+	//있는지 없는지 비교
+	res = "";
+	if(idx < 0){
+		res += `${item}은 없는 과일입니다`;
+	}else{
+		res += `${item}는   ${idx} 번째 있습니다`;
+	}
+	
+	//출력
+	result = document.getElementById('result1');
+	result.innerHTML = res;
+}
+
+function proc2() {
+	item = prompt("과일을 입력하세요");
+	idx = arr.lastIndexOf(item);  //마지막 인덱스로 검색
+	
+	//alert(`${item}는   ${idx} 번째 있습니다`)
+	//있는지 없는지 비교
+	res = "";
+	if(idx < 0){
+		res += `${item}은 없는 과일입니다`;
+	}else{
+		res += `${item}는   ${idx} 번째 있습니다`;
+	}
+	
+	//출력
+	result = document.getElementById('result2');
+	result.innerHTML = res;
+	
+}
+
+function proc3() {
+	idx = 0;
+	
+	//입력
+	item = prompt("입력하세요");
+	str = "찾는 과일 " + item + "는 ";
+	
+	while(true){
+		
+		idx = arr.indexOf(item, idx);
+		if(idx < 0) break;
+		str += idx + "번째 "
+		
+		idx ++;
+	}
+	//출력
+	result = document.getElementById('result3');
+	result.innerHTML = str + "있습니다";
+	
+}
+
+function proc4() {
+	
+	//추가할 데이터 입력
+	item = prompt("추가할 데이터를 입력하세요");
+	
+	arr.push(item);
+	
+	//출력
+	result = document.getElementById('result4');
+	result.innerHTML = arr;
+	
+}
+
+function proc5() {
+	
+	arr2 = arr.pop();
+	
+	//출력
+	result = document.getElementById('result5');
+	result.innerHTML = arr;
+}
+</script>
+<style>
+</style>
+</head>
+<body>
+
+<div class="box">
+	 * indexOf(item) : item이 배열에 몇번째 위치에 있는지 검사. <br>
+	 * lastIndexOf(item) : item이 배열에 몇번째 위치에 뒤에서부터 있는지 검사.(인덱스 번호는 그대로) <br>
+	 * indexOf(item, start) : start위치부터 시작해서 item이 배열에 몇번째 위치에 있는지 검사. <br>	  
+ <br><br>
+	
+<input type="button" value="indexOf" onclick="proc1()">
+<input type="button" value="lastIndexOf" onclick="proc2()">
+<input type="button" value="lastIndexOf" onclick="proc3()">
+
+<div id="result1"></div>
+<div id="result2"></div>
+<div id="result3"></div>
+</div>
+
+
+
+<div class="box">
+	* push(a,b,c...) : 배열의 마지막에 추가<br>
+	* a = pop() : 배열의 마지막 요소를 제거하고 리턴<br> 
+ <br><br>
+	
+<input type="button" value="push" onclick="proc4()">
+<input type="button" value="pop" onclick="proc5()">
+
+<div id="result4"></div>
+<div id="result5"></div>
+</div>
+
+
+<div class="box">
+	* reverse() : 배열의 순서 뒤집기<br>
+	* sort() : 배열의 요소를 사전순으로 정렬<br> 
+ <br><br>
+	
+<input type="button" value="reverse" onclick="proc6()">
+<input type="button" value="sort" onclick="proc7()">
+
+<div id="result6"></div>
+<div id="result7"></div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

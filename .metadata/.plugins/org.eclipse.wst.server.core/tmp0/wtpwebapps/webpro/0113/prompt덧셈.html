@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css" type="text/css">
+<script type="text/javascript">
+	window.onload = function(){
+		
+		x = parseInt(prompt("정수 1 입력"));
+		y = parseInt(prompt("정수 2 입력"));
+		
+		//div요소에 접근
+		tag = document.querySelector('div');
+		
+		//출력모양 23 + 34 = 57
+		res = x + " + " + y + " = " + (x+y);
+		tag.innerHTML = res; 
+	}
+
+</script>
+
+</head>
+<body>
+<div></div>
+</body>
+</html>

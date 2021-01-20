@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script>
+	var circle = { 
+			//속성
+			r : 5,
+			//메소드
+			getA : function() { //면적
+				a = 2 * Math.PI * this.r;
+				return a;
+			},
+			
+			getB : function() { //둘레
+				b = Math.PI * this.r * this.r;
+				return b;
+			}
+	}
+	
+	function proc1() {
+		
+		print("#select1");
+		
+	}
+	
+	function print(out) {
+		res = `반지름 : ${circle.r} <br>`;
+		res += `넓이 : ${circle.getA()} <br>`;
+		res += `둘레 : ${circle.getB()}`;
+		
+		result = document.querySelector("out");
+		result.innerHTML = res;
+	}
+	
+	function proc2() {
+		
+		x = prompt("반지름 입력");
+		
+		circle.r = x;
+		
+		print("#select2");
+		
+	}
+	
+</script>
+<style>
+</style>
+</head>
+<body>
+
+<div class="box">
+	
+ <br><br>
+	
+<input type="button" value="확인" onclick="proc1()">
+<input type="button" value="변경" onclick="proc2()">
+
+<div id="result1"></div>
+<div id="result2"></div>
+</div>
+</body>
+</html>

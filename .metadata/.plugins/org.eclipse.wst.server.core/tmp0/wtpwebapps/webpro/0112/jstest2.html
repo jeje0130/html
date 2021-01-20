@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css" type="text/css">
+
+<style>
+	div{
+		width : 500px;
+		height : 50px;
+		border : 1px solid blue;
+		margin : 5px;
+		padding: 5px;
+	}
+</style>
+
+<script type="text/javascript">
+
+	window.onload = function(){    // window.onload : 윈도우가 실행됬을때  진행
+		
+		var now = new Date();       
+	    //html요소에 접근
+		aa = document.getElementsByTagName('div')[0];
+		aa = document.getElementById('d1');
+		//해당요소에 출력
+		aa.innerHTML = now.toLocaleString(); //div에 실행
+		//document.write(now.toLocaleString());  //div를 없애고 새로운 document에 찍어냄, 
+		                                         //body태그에 내용이 있을경우 사용하면 안됌
+	} 
+	
+</script>
+
+</head>
+<body>
+	<div id="d1">
+	</div>
+	
+	<!-- <script type="text/javascript">
+	var now = new Date();
+    //html요소에 접근
+	aa = document.getElementsByTagName('div')[0];
+	aa = document.getElementById('d1');
+	//해당요소에 출력
+	aa.innerHTML = now.toLocaleString();
+	</script> -->
+</body>
+</html>

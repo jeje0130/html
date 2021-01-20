@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script>
+	//객체생성
+	var rect = {
+		width : 12,
+		height : 4,
+		getArea : function(){ 
+			area = this.width * this.height;
+			return area;
+		},
+		getCircum : function(){
+			var circum = (this.width + this.height) * 2;
+			return circum;
+		}
+			
+	};
+
+	function proc1() {
+		//alert("함수호출");
+		
+		//출력모양
+		res = ` 가로 :  ${rect.width} <br>`;
+		res += `세로 :  ${rect.height} <br>`;
+		
+		a = rect.getArea();
+		
+		res += `면적 : ${a} <br>`;
+		
+		res += `둘레 : ${rect.getCircum()} <br>`;
+		
+		result= document.querySelector("#result1");
+		result.innerHTML = res;
+		
+	}
+
+</script>
+<style>
+</style>
+</head>
+<body>
+
+<div class="box">
+	
+ <br><br>
+	
+<input type="button" value="확인" onclick="proc1()">
+
+<div id="result1"></div>
+</div>
+</body>
+</html>

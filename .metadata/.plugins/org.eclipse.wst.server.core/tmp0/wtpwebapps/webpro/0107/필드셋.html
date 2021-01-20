@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css" type="text/css">
+
+<style>
+	form{
+		border : 5px solid pink;
+		padding : 20px;
+	}
+	fieldset{
+		border : 5px dotted orange;
+		margin : 20px;
+		padding : 20px;
+	}
+	legend{
+		font-size : 1.2em;
+		font-weight : bold;
+	}
+	/* #aa : 아이디  / .aa : 클래스  /  * : 전체 */
+	
+</style>
+</head>
+<body>
+
+<pre>
+	fieldset : 입력요소에 대한 그룹핑
+	legend : 그룹의 제목
+</pre>
+
+<form action="">
+	<fieldset>
+        <legend>인적사항 입력</legend>
+                   이름<input type="text" name="name"><br>
+       	 주소<input type="text" name="addr"><br>
+    </fieldset>
+    
+    <fieldset>
+        <legend>경력사항 입력</legend>
+                   회사이름<input type="text" name="cname"><br>
+       	 경력기간<input type="text" name="per"><br>
+    </fieldset>
+</form>
+</body>
+</html>

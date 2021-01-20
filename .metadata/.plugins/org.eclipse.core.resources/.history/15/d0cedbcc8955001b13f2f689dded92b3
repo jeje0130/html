@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	div{
+		border: 2px solid gray;
+		width: 250px;
+		height: 450px;
+		margin : 3px;
+		padding : 10px;
+		box-sizing : border-box;
+		background: #FFFFFF;
+	}
+	
+	#d1 {
+		width: 250px;
+		height: 450px;
+		border: none;
+	}
+	#d2 {
+		float: left;
+	}
+	#d3 {
+		float: left;
+	}
+	div img{
+		width: 220px;
+		height: 350px;
+		vertical-align: middle;
+	}
+	audio{
+		width: 220px;
+	}
+	input{
+		background-image: linear-gradient(white, #d2d2d2);
+	}
+</style>
+
+</head>
+<body>
+
+<div id="d1">
+<video width="700" height="400" controls autoplay>
+        <source src="../multi/trailer.mp4" type='video/mp4'>
+</video>
+</div>
+
+<div id="d2">
+<img alt="항거" src="../images/영화1.jpg">
+<p> 항거-유관순이야기</p>
+<input type="button" value="쇼핑카트에 추가하기">
+</div>
+
+
+<div  id="d3">
+<img alt="극한직업" src="../images/영화2.jpg">
+<p> 극한직업 </p>
+<input type="button" value="쇼핑카트에 추가하기">
+</div>
+
+</body>
+</html>

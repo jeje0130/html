@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script>
+</script>
+<style>
+</style>
+</head>
+<body>
+
+<div class="box">
+	1. 1부터 10 사이의 랜덤숫자를 발생한다.<br>
+	2. 수를 입력하여 랜덤값을 맞춘다.<br>
+	3. 맞출때까지의 횟수를 구하고 입력한 값들을 나열한다.<br>
+ <br><br>
+수입력<input type="text" id="su">
+<input type="button" value="확인" onclick="proc1()">
+
+<div id="result1"></div>
+</div>
+</body>
+</html>

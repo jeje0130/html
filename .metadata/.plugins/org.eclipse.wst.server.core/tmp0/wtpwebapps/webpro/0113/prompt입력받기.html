@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css" type="text/css">
+<script type="text/javascript">
+	function proc1() {
+		
+		//입력하기 - prompt()
+		a = prompt("이름을 입력하세요","홍길동"); // 앞에는 필수, 뒤에 값은 선택
+		
+		//document.write(a);
+		//div에 출력하기 위해서 html div요소에 접근한다
+	    tag = document.getElementsByTagName("div")[0];
+		
+		//tag에 출력 - innerHTML(출력하고자 하는 내용에 html포함, 덮어쓰기됨), 
+		//        - textContent(출력하고자 하는 내용에 html 불포함)
+		//tag.textContent = a;
+		tag.textContent = "<h1>" + a + "</h1>";
+		tag.innerHTML = "<h1>" + a + "</h1>";
+	}
+</script>
+</head>
+<body>
+<pre>
+	script에서 HTML요소에 접근
+	방법1) document.getElementsByTagName("div")[0];
+	      document.getElementsById('aa') : #, . 표기 안해줘도됨
+	
+	//ECMAScript(es6)버전
+	방법2) document.querySelector('div')   :  요소가 여러개가 있어도 첫번째 요소로 접근
+          document.querySelector('#aa')   : #아이디 표기해줘야함
+          document.querySelector('.aa')   : .클래스 표기해줘야함
+	
+	방법3) document.querySelectorAll('div')   :  모든 div 접근
+</pre>
+	<input type="button" value="확인" onclick="proc1()">
+	<div></div>
+</body>
+</html>

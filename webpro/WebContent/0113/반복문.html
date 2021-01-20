@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css" type="text/css">
+
+<script>
+	function proc1() {
+		sum = 0;
+		for (i = 1;  i <= 100; i++) {
+			sum += i;
+		}
+		
+		result = document.querySelector("#result1");
+		result.innerHTML = sum;
+	}
+	
+	function proc2() {
+		sum = 0;
+		
+		/* for (i = 1; i <= 200; i++) {
+			if(i % 2 == 0){
+				continue;
+			sum += i;
+			}
+		} */
+		
+		for (i = 1; i <= 200; i++) {
+			if(i%2 != 0) continue;
+			sum += i;
+		}
+		
+		result = document.querySelector("#result2");
+		result.innerHTML = sum;
+	}
+</script>
+</head>
+<body>
+<div class="box">
+	1~100까지 합구하기 <br><br>
+	
+<input type="button" value="확인" onclick="proc1()">
+
+<div id="result1"></div>
+</div>
+
+<div class="box">
+	1~200까지 짝수 합구하기 <br><br>
+	
+<input type="button" value="확인" onclick="proc2()">
+
+<div id="result2"></div>
+</div>
+</body>
+</html>
