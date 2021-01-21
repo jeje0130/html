@@ -4,25 +4,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel = "stylesheet" href = "../css/public.css">
+<script src="../js/formcheck.js"></script>
 <script>
 
+window.onload = function() {
+	document.getElementById('name').focus();   // 시작 시 커서위치 지정
+	
+}
+
 function proc1() {
-	//입력한 값 가져오기 - 이름
-	namevalue = document.getElementById('name').value;
 	
-	
-	//공백 체크
-	if(namevalue.trim().length < 1){ 	//trim() : 공백 방지
-		alert("이름을 입력하세요");
-		return false;
-	}
-	//길이 체크
-	if(namevalue.trim().length < 2 || namevalue.trim().length > 7){
-		alert("이름 2~7자리 사이로 입력하세요");
-		return false;
-	}
-	//정규식
-	namereg = /^[가-힣]+$/;
+	if(check()) alert("성공");
 	
 }
 
@@ -45,13 +37,13 @@ function proc1() {
  
 <form>
 	<label for='name'>이름 </label> <input type='text' id='name' ><br> 
-	<label for='pass'>비밀번호</label> <input type='password' id='pass' ><br>
+	<label for='pass'>비밀번호</label> <input type='text' id='pass' ><br>
 	
 	<label for='birthday'>생일</label> <input type='date' id='birthday' ><br>
 	<label>아이디</label> <input type='text' id='id' ><br>
 	
 	<label>이메일</label> <input type='text' id='email' ><br>
-	<label>휴대폰</label> <input type='text' id='phone' ><br>
+	<label>휴대폰</label> <input type='text' id='tel' ><br>
 	
 	<input type='button' value='확인' onclick="proc1()"><br>
 </form>

@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+
+function check() {
+	
+	//--------------------------이름체크----------------------------
+	//입력한 값 가져오기 - 이름
+	namevalue = document.getElementById('name').value;
+	
+	
+	//공백 체크
+	if(namevalue.trim().length < 1){ 	//trim() : 공백 방지
+		alert("이름을 입력하세요");
+		return false;
+	}
+	//정규식
+	namereg = /^[가-힣]+$/;
+	
+	//비교 test() - true/false리턴
+	
+	if(!(namereg.test(namevalue))){
+		alert("이름형식오류");
+		return false;
+	}
+	
+	//길이 체크
+	if(namevalue.trim().length < 2 || namevalue.trim().length > 7){
+		alert("이름 2~7자리 사이로 입력하세요");
+		return false;
+	}
+	
+	//-------------------------아이디체크-----------------------------
+	// 값 가져오기
+	idvalue = document.getElementById('id').value;
+	
+	//공백
+	if(idvalue.trim().length < 1){
+		alert("아이디를 입력하세요");
+		return false;
+	}
+	
+	//길이체크
+	if(idvalue.trim().length < 4 || idvalue.trim().length > 12){
+		alert("아이디를 4~12자리 사이로 입력하세요");
+		return false;
+	}
+	
+	
+	
+	return true;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
