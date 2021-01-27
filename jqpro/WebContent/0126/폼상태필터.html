@@ -18,7 +18,11 @@ $(function () {
 		$(':checkbox:checked').each(function() {
 			res += $(this).val() + " "
 		})
-		alert(res);
+		res += "를 선택하셨습니다.";
+		//alert(res);
+		$('#result2 div').html(res).css({'border':'5px dotted green',
+										'font-size':'1.5em'});
+		
 	})
 	
 	
@@ -76,6 +80,7 @@ $(function () {
 	<input type="checkbox" name="hobby" value="낚시" checked="checked">낚시<br><br>
 </form>
 
+<div></div>
 
 </div>
 </div>
