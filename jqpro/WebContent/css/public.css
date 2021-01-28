@@ -19,13 +19,13 @@ div.box{
 	margin: 10px;
 	padding: 20px;
 	border: 1px solid gray;
-	background: #FFB6C1;
+	background: #FFCAD5;
 }
 
 .box input[type = button]{
 	width: auto;
 	height: 30px;
-	background: #008080;
+	background: #008C8C;
 	color : white;
 	padding: 5px 10px;
 	border-radius : 10px;
@@ -36,7 +36,7 @@ div.box{
 	width : 80%;
 	height: auto;
 	padding: 10px;
-	border: 2px dotted gray;
+	border: 3px dotted gray;
 	margin: 20px;
 }
 

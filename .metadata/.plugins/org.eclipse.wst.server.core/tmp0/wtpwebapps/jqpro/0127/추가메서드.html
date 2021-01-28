@@ -24,8 +24,8 @@ $(function () {
 <style>
 
 img{
-	width: 100px;
-	height: 100px;
+	width: 120px;
+	height: 120px;
 }
 
 </style>
@@ -33,7 +33,9 @@ img{
 <body>
 
 <div class="box box1">
-	새로운 이미지 추가 -append(content)/appendTo(selector)
+	새로운 이미지 추가 -append(content)/appendTo(selector)<br>
+	일치된 요소 내부의 마지막 위치에 content를 추가한다 <br>
+	
  <br><br>
 	
 <input type="button" value="확인">
@@ -48,7 +50,10 @@ img{
 </div>
 
 <div class="box box2">
-	기존의 이미지를 이동한다 -append(content)/appendTo(selector)
+	기존의 이미지를 이동한다 -append(content)/appendTo(selector)<br>
+	선택된 요소를 selector에 일치된 모든 요소들의 내부 마지막 위치에 추가한다. <br>
+	만일, 일치된 요소가 본문에 존재하면 그 요소를 제거한 후 복사한다. (즉, 이동)<br>
+	$('#result2 img:first').appendTo($('#result2'));<br>
  <br><br>
 	
 <input type="button" value="확인">
