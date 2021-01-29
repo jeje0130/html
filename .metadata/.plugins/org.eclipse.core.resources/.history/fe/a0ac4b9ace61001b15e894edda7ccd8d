@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script>
+$(function () {
+	$('.box1 > input:button').click(function () {
+		//$('#result1 p').css('background','yellow');
+		$('#result1 p').addClass('bcolor');
+	})
+	
+	$('#result1 p').click(function () {
+		$(this).removeClass('bcolor');
+	})
+	
+	$('#result2 p').click(function () {
+		$(this).toggleClass('bcolor');
+	})
+	
+	
+})
+</script>
+<style>
+.bcolor{
+	background: skyblue;
+}
+#result1{
+	color : red;
+}
+</style>
+</head>
+<body>
+
+<div class="box box1">
+	스타일에 .bcolor{background: skyblue;} 를 정의한다.<br>
+	<br><br>
+	버튼을 클릭하면 .addClass('bcolor'); 실행한다.<br>
+	p태그를 클릭하면 .removeClass('bcolor'); 실행한다.<br>
+ <br><br>
+	
+<input type="button" value="확인">
+
+<div id="result1">
+	<p>금요일이다아아아아아아아</p>
+	<p>금요일이다아아아아아아아</p>
+</div>
+</div>
+
+
+<div class="box box2">
+	p태그를 클릭하면 .toggleClass('bcolor'); 를 수행.<br>
+	.toggleClass()는 addClass()와 removeClass()를 번갈아 가면서 수행<br>
+ <br><br>
+
+<div id="result2">
+	<p>금요일이다아아아아아아아</p>
+	<p>금요일이다아아아아아아아</p>
+</div>
+</div>
+
+
+<div class="box box3">
+	선택자.hasClass('bcolor')
+	- 지정된 클래스가 매치된 요소들의  집합 중  최소 한군데 이상 적용 되어 있으면 true를 리턴하고 <br>
+	    아니면 false를 리턴한다.<br>
+	
+	<br>
+ <br><br>
+
+<div id="result3">
+	<p>금요일이다아아아아아아아</p>
+	<p>금요일이다아아아아아아아</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+$(function () {
+	$('.box1').click(function () {
+		
+		// 각 요소의 상태값 가져오기
+		a = $('#checkTest').prop('checked');
+		b = $('#selTest > option').eq(0).prop('selected');
+		c = $('#txtTest').prop('readonly');
+		d = $('#runBtn').prop('disabled');
+		
+		res = "체크박스 : " + a + "<br>";
+		res += "select : " + b + "<br>";
+		res += "readonly : " + c + "<br>";
+		res += "disabled : " + d + "<br>";
+		
+		$('#result1 div').html(res);
+
+	})
+})
+</script>
+<style>
+</style>
+</head>
+<body>
+
+	<div class="box box1">
+
+		<br>
+		<br> <input type="button" value="확인">
+
+		<div id="result1">
+			<form>
+				체크박스(라디오버튼) : 
+				<input type="checkbox" id="checkTest"  checked><br><br>
+
+				리스트박스(select객체) : 
+ 				<select id="selTest">
+				<option value="1">하나</option>
+				<option value="2">둘</option>
+				<option value="3" selected >셋</option>  
+				<option value="4">넷</option>
+				</select><br>
+				
+				<br> text객체 (readonly) : 
+				<input readonly="readonly" type="text" value="가나다" id="txtTest"><br>
+				<br> button객체(disabled) : 
+				<input disabled="disabled" type="button" onclick="alert('Hello')" value="실행" id="runBtn">
+			</form>
+
+			<div></div>
+			
+		</div>
+	</div>
+</body>
+</html>

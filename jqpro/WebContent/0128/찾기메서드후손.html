@@ -7,8 +7,8 @@
 <script src="../js/jquery-3.5.1.min.js"></script>
 <script>
 $(function () {
-	$('.box1 input:button').on('click', function () {
-		$(this).parents('.box1').find('span').css("border", "3px solid blue");
+	$('.box input:button').on('click', function () {
+		$(this).parents('.box').find('span').css("border", "3px solid blue");
 	})
 })
 </script>
@@ -49,7 +49,7 @@ $(function () {
 	
 <input type="button" value="find">
 
-	<div id="result1" class="ancestors">
+	<div id="result2" class="ancestors">
 		<div id="d1" style="width: 500px;">
 			div (great-grandparent)
 			<ul>
