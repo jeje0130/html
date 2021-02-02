@@ -7,6 +7,10 @@
 <script src="../js/jquery-3.5.1.min.js"></script>
 <script>
 $(function(){
+	  // $('btn').bind('click', function () {})
+		//$('.btn').click(function () {})
+			
+	
 	   $('.btn').on('click', function(){
 	      bb = $('<input>', {
 	               'class' : 'btn',
@@ -17,6 +21,14 @@ $(function(){
 	      $(bb).appendTo($('#result1'));
 	      
 	   })
+	   
+	   //$('#clear').bind('click', function () {	})
+	   
+	   $('#clear').on('click', function () {
+			//버튼의 이벤트를 해제
+		   $('.btn').off('click');
+		   $('.btn').unbind('click');
+		})
 	})
 
 </script>

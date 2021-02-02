@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script>
+</script>
+<style>
+img{
+	width: 150px;
+	height: 150px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+	
+ <br><br>
+ <h1>교재 리스트</h1>	
+ <ul>
+ 	<li>
+ 		<a href="../images/딸기스무디.jpg">jQuery교재</a>
+ 	</li>
+ 	
+ 	<li>
+ 		<a href="../images/뱅쇼.jpg">JSP교재</a>
+ 	</li>
+ 	
+ 	<li>
+ 		<a href="../images/핫초코.jpg">JSP교재</a>
+ 	</li>
+
+ </ul>
+
+<div id="result1">
+	<img src="../images/spongebob.png" alt="스펀지밥">
+</div>
+</div>
+</body>
+</html>
