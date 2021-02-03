@@ -23,23 +23,24 @@
 
 <%
 	//1.SqlMapClient객체를  얻어오기 - 
-	SqlMapClient a = SqlMapClientFactory.getCliect();
+	SqlMapClient a = SqlMapClientFactory.getClient();
 
 	//2.SQL문을 실행 - mapper에 있는 namespace.id 이름
 	List<MemberVO> list = a.queryForList("member.selectAll");
 %>
 
-<%-- json 데이터 자리 --%>
+
 [
 
 
-<%
+<% 
 	//3.실행 결과로 json데이터 생성 - java와 json 분리
 	for(int i=0; i<list.size(); i++){
 		MemberVO vo = list.get(i);
-%>
+		if(i > 0) out.print(",");
+		%>
 
-<%-- json 데이터 자리 --%>
+
 {
 	"id"   : "<%= vo.getMem_id() %>",
 	"name" : "<%= vo.getMem_name() %>",
@@ -51,7 +52,7 @@
 	}
 %>
 
-<%-- json 데이터 자리 --%>
+
 
 ]
 

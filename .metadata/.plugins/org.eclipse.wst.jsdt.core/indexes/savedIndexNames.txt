@@ -5,5 +5,4 @@ INDEX VERSION 1.3+D:\A_TeachingMaterial\5.JQuery\.metadata\.plugins\org.eclipse.
 993438108.index
 1585106647.index
 45103440.index
-869847675.index
 1143452685.index
