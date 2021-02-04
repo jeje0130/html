@@ -11,4 +11,10 @@
 	
 	</select>
 	
+	<select id="selectByDetails" parameterClass="String" resultClass="buyerVO">
+		
+		select * from buyer where buyer_id=#data#
+		
+	</select>
+	
 </sqlMap>

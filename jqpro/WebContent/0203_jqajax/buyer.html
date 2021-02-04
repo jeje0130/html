@@ -29,6 +29,72 @@ $(function () {
 			
 		})
 	})
+	
+	/* $('#names').on('click', 'p', function () {
+		
+		idvalue = $(this).attr('id');
+		
+		$.ajax({
+			url : 'buyerDetails.jsp',
+			type : 'post',
+			data : { "id" : idvalue },
+			success : function (res) {
+				
+				code = "<table class='tab'>";
+				code += "<tr><td>BUYER_ID</td>";
+				code += "<td>"+ res.ID + "</td></tr>";
+				
+				code += "<tr><td>BUYER_NAME</td>";
+				code += "<td>"+ res.NAME + "</td></tr>";
+				
+				code += "<tr><td>BUYER_LGU</td>";
+				code += "<td>"+ res.LGU + "</td></tr>";
+				
+				code += "<tr><td>BUYER_BANK</td>";
+				code += "<td>"+ res.BANK + "</td></tr>";
+				
+				code += "<tr><td>BUYER_BANKNO</td>";
+				code += "<td>"+ res.BANKNO + "</td></tr>";
+				
+				code += "<tr><td>BUYER_BANKNAME</td>";
+				code += "<td>"+ res.BANKNAME + "</td></tr>";
+				
+				code += "<tr><td>BUYER_ADD1</td>";
+				code += "<td>"+ res.ADD1 + "</td></tr>";
+				
+				code += "<tr><td>BUYER_ADD2</td>";
+				code += "<td>"+ res.ADD2 + "</td></tr>";
+				
+				code += "</table>";
+				
+				
+                $('#details').html(code);
+			},
+			error : function (xhr) {
+				alert("상태 : "+ xhr.status);
+			},
+			dataType : 'json'  //html, text 
+			
+		})
+	}) */
+	
+	$('#names').on('click', 'p', function () {
+		
+		idvalue = $(this).attr('id');
+		
+		$.ajax({
+			url : 'details.jsp',
+			type : 'post',
+			data : { "id" : idvalue },
+			success : function (res) {
+				$('#details').html(res);
+			},
+			error : function (xhr) {
+				alert("상태 : "+ xhr.status);
+			},
+			dataType : 'html'
+		})
+	})
 })
 
 </script>
@@ -48,12 +114,14 @@ td{
 p:hover{
 	background: lime;
 }
+
 </style>
 </head>
 <body>
 
 <div class="box">
-	
+	bind : 원래있던 요소에 이벤트를 줄때 사용<br>
+	delegate : 새롭게 생긴 요소에 이벤트를 줄때 사용<br>
  <br><br>
 	
 <input type="button" value="확인">
