@@ -1,0 +1,11 @@
+package kr.or.ddit.dao;
+
+public class DaoImpl implements IDaoSample {
+
+	@Override
+	public List<MemberVO> getMemberAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

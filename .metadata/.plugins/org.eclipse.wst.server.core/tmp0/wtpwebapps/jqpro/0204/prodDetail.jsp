@@ -17,7 +17,7 @@
 
 %>
 
-			<table class='tab' border="1">
+			<table class="table table-striped" border="1">
 				<tr><td>항목</td>
 				<td>내용</td></tr>
 			

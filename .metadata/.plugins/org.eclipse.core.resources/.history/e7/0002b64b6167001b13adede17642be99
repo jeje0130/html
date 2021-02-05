@@ -1,0 +1,6 @@
+package kr.or.ddit.lprod.dao;
+
+public interface ILprodDao {
+	//메서드 선언
+	public List<LprodVO> = selectLprod
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;ibatis-2.3.4.726.jar&apos; to &apos;lib&apos;" description="Move &apos;ibatis-2.3.4.726.jar&apos; to &apos;lib&apos;" destination="WebContent/WEB-INF/lib" element1="WebContent/WEB-INF/ibatis-2.3.4.726.jar" element2="WebContent/WEB-INF/log4j-1.2.17.jar" element3="WebContent/WEB-INF/ojdbc6.jar" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="3" stamp="1612497039730" updateReferences="true"/>
+</session>

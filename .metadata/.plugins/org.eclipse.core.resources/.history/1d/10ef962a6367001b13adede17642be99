@@ -1,0 +1,41 @@
+package kr.or.ddit.lprod.sevice;
+
+import java.util.List;
+
+import com.ibatis.sqlmap.client.SqlMapClient;
+
+import kr.or.ddit.ibatis.config.SqlMapClientFactory;
+import kr.or.ddit.lprod.dao.ILprodDao;
+import kr.or.ddit.lprod.dao.LprodDaoIpml;
+import kr.or.ddit.lprod.vo.LprodVO;
+import kr.or.ddit.service.IServiceSample;
+
+/*
+ * Dao객체 얻어오기
+ * Dao 메서드 호출하기 - 결과값 리턴받기
+ * servlet으로 리턴한다
+ * 
+ * servlet에서 사용할 자신의 객체 생성
+ * 자신의 객체를 리턴하는 getService()메서드 정의
+ * 
+ */
+
+public class LprodServiceIpml implements ILprodService {
+
+	private SqlMapClient client;
+	private static ILprodDao dao;
+	
+	private LprodDaoIpml(){
+		client = SqlMapClientFactory.getClient();
+	}
+	
+	@Override
+	public List<LprodVO> selectLprod() {
+		List<LprodVO> list =null;
+		
+		list = dao.selectLprod();
+		
+		return list;
+	}
+
+}
