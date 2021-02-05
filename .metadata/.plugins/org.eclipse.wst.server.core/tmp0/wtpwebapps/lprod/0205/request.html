@@ -14,6 +14,7 @@ $(function () {
 		
 			url : '/lprod/LprodList',
 			type : 'get',
+			data : {"id":"P101"},
 			success : function (res) {
 				$('#result1').append(res);
 			},

@@ -36,7 +36,7 @@ public class LprodDaoIpml implements ILprodDao {
 		List<LprodVO> list =null;
 		
 		try {
-			list = client.queryForList("selectLprod");
+			list = client.queryForList("lprod.selectLprod");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

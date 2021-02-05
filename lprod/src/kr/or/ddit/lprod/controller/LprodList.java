@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.or.ddit.lprod.sevice.ILprodService;
-import kr.or.ddit.lprod.sevice.LprodServiceIpml;
+import kr.or.ddit.lprod.service.ILprodService;
+import kr.or.ddit.lprod.service.LprodServiceIpml;
 import kr.or.ddit.lprod.vo.LprodVO;
 
 /**
