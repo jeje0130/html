@@ -1,0 +1,18 @@
+package kr.or.ddit.member.service;
+
+import java.util.List;
+
+import kr.or.ddit.member.vo.MemberVO;
+import kr.or.ddit.member.vo.ZipVO;
+
+
+public interface IMemberService {
+	
+	//메서드 선언
+	public String selectById(String Id);
+	
+	public String insertMember(MemberVO vo);
+	
+	public List<ZipVO> selectByDong();
+
+}

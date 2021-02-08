@@ -1,0 +1,55 @@
+package kr.or.ddit.member.service;
+
+import java.util.List;
+
+import kr.or.ddit.member.dao.IMemberDao;
+import kr.or.ddit.member.dao.MemberDaoImpl;
+import kr.or.ddit.member.vo.MemberVO;
+import kr.or.ddit.member.vo.ZipVO;
+
+/*
+ * Dao객체 얻어오기 - 생성자
+ * Dao 메서드 호출하기 - 결과값 리턴받기
+ * servlet으로 리턴한다
+ * 
+ * servlet에서 사용할 자신의 객체 생성
+ * 자신의 객체를 리턴하는 getService()메서드 정의
+ * 
+ */
+
+public class MemberServiceImpl implements IMemberService {
+
+	private IMemberDao dao;
+	private static IMemberService service;
+	
+	private MemberServiceImpl(){
+		dao = MemberDaoImpl.getDao();
+	}
+	
+	public static IMemberService getService(){
+		if(service == null) service = new MemberServiceImpl();
+		
+		return service;
+	}
+	
+	@Override
+	public String selectById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String insertMember(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ZipVO> selectByDong(String dong) {
+		List<ZipVO> list = null;
+		
+		list = dao.selectByDong(dong);
+		return list;
+	}
+
+}

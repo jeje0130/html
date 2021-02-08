@@ -6,8 +6,8 @@
 		<item value="Apache Tomcat v7.0"/>
 	</list>
 	<list key="J2EE_EXPORT_JST_WEB">
-		<item value="F:\lprod.war"/>
 		<item value="F:\prod.war"/>
+		<item value="F:\lprod.war"/>
 		<item value="C:\Users\PC-02\Desktop\jqpro.war"/>
 	</list>
 </section>
