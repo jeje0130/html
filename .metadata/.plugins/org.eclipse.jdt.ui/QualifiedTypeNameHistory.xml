@@ -27,4 +27,5 @@
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="kr.or.ddit.member.vo.ZipVO"/>
 <fullyQualifiedTypeName name="kr.or.ddit.member.vo.MemberVO"/>
+<fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
 </qualifiedTypeNameHistroy>
