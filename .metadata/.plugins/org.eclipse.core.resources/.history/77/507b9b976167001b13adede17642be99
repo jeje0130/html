@@ -1,5 +1,0 @@
-package kr.or.ddit.lprod.sevice;
-
-public interface ILprodService {
-
-}

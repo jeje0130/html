@@ -30,8 +30,18 @@ function idcheck() {
 		alert("id를 입력하세요");
 		return false;
 	}
+	
+	$.post(
+			'/member/IDcheck', 
+			{"id" : idvalue},
+			function (res) {
+				$('#idspan').html(res.sw).css('color','red');
+			},
+			'json'
+	)
 
-	$.ajax({
+	/*
+	 $.ajax({
 		url : '/member/IDcheck',
 		type : 'post',
 		data : {"id" : idvalue},
@@ -43,6 +53,7 @@ function idcheck() {
 		},
 		dataType : 'json'
 	})
+	*/
 }
 
 //우편번호 modal에서 돔 입력후 확인버튼 클릭 이벤트
