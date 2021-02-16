@@ -2,6 +2,7 @@ package kr.or.ddit.board.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -41,5 +42,22 @@ public class BoardDaoImpl implements IBoardDao {
 		
 		return list;*/
 	}
+
+	@Override
+	public List<BoardVO> selectBypage(Map<String, Integer> map)
+			throws SQLException {
+		// TODO Auto-generated method stub
+		return client.queryForList("board.selectBypage", map);
+	}
+	
+	
+	@Override
+	public int listCount() throws SQLException {
+		// TODO Auto-generated method stub
+		return (int) client.queryForObject("board.listCount");
+	}
+
+
+	
 
 }

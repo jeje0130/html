@@ -1,0 +1,17 @@
+html - javascript메서드 호출
+javascript의 메서드에서 ajax요청
+각 요소에 대한 이벤트는 html에 등록
+---------------------------------------------
+리스트 출력
+board.html
+javascript(board.js)의 readServer()메서드 호출
+
+readServer의 ajax에서 servlet(ListAll.java-/List.do)요청
+service - dao - mapper 수행 후 결과를 리턴
+
+listAll.jsp로 forword - json데이터 생성
+ajax의 success로 응답받음
+--------------------------------------------------------------------
+board.html에서 method call -> board.js (ajax)에서 request
+
+sqlMapConfig.xml 에러나면 board.xml 또는 BoardVO.java VO를 봐야한다.

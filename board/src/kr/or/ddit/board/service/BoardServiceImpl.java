@@ -2,6 +2,7 @@ package kr.or.ddit.board.service;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import kr.or.ddit.board.dao.BoardDaoImpl;
 import kr.or.ddit.board.dao.IBoardDao;
@@ -40,10 +41,40 @@ public class BoardServiceImpl implements IBoardService {
 		try {
 			list = dao.selectAll();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;
 	}
+
+	@Override
+	public List<BoardVO> selectBypage(Map<String, Integer> map) {
+		List<BoardVO> list = null;
+		
+		try {
+			list = dao.selectBypage(map);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	
+	@Override
+	public int listCount() {
+		
+		int cnt = 0;
+		
+		try {
+			cnt = dao.listCount();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return cnt;
+	}
+
+
+	
 
 }

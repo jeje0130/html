@@ -12,6 +12,9 @@
   <script src="../js/board.js"></script>
   
 <style>
+body{
+	margin: 10px;
+}
 p{
 	box-sizing : border-box;
 }
@@ -33,23 +36,40 @@ button[name=reply]{
 }
 
 .panel-heading:hover{
-	background: #BECDFF;
+	background: #FFC7AD;
 }
 
+.pager{
+	width: 100px;
+	float: left;
+	margin: 5px;
+}
 </style>
 
 <script>
 
 $(function () {
-	readServer();
+	//readServer();
+	readPageServer(3);
 })
 </script>
 
 </head>
 <body>
 
+<h2>게시판</h2>
+<br>
 <div class="box">
-
 </div>
+
+<br><br>
+<div id="pagelist">
+</div>
+
+
 </body>
 </html>
+
+
+
+

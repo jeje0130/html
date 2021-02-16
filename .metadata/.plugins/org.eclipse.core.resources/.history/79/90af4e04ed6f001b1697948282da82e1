@@ -1,0 +1,6 @@
+
+리스트 출력
+board.html
+javascript(board.js)의 readServer()메서드 호출
+
+readServer의 ajax에서 servlet(listAll.java)요청
