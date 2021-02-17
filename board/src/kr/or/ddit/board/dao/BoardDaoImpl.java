@@ -46,15 +46,23 @@ public class BoardDaoImpl implements IBoardDao {
 	@Override
 	public List<BoardVO> selectBypage(Map<String, Integer> map)
 			throws SQLException {
-		// TODO Auto-generated method stub
 		return client.queryForList("board.selectBypage", map);
 	}
 	
 	
 	@Override
 	public int listCount() throws SQLException {
-		// TODO Auto-generated method stub
 		return (int) client.queryForObject("board.listCount");
+	}
+
+	@Override
+	public int insertBoard(BoardVO vo) throws SQLException {
+		return (int) client.insert("board.insertBoard", vo);
+	}
+
+	@Override
+	public int deleteBoard(int num) throws SQLException {
+		return client.delete("board.deleteBoard", num);
 	}
 
 

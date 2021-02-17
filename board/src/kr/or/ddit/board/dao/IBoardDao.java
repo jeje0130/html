@@ -15,10 +15,12 @@ public interface IBoardDao {
 	public List<BoardVO> selectBypage(Map <String, Integer> map) throws SQLException;
 		
 	//게시글 저장하기
+	public int insertBoard(BoardVO vo) throws SQLException;
 		
 	//게시글 수정하기
 		
 	//게시글 삭제하기
+	public int deleteBoard(int num) throws SQLException; 
 		
 	//댓글 저장하기
 		

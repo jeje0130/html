@@ -29,7 +29,7 @@
 			"writer" : "<%= vo.getWriter() %>",
 			"mail" : "<%= vo.getMail() %>",
 			"pass" : "<%= vo.getPassword() %>",
-			"cont" : "<%= vo.getContent() %>",
+			"cont" : "<%= vo.getContent().replaceAll("\r", "").replaceAll("\n", "<br>") %>",
 			"hit" : "<%= vo.getHit() %>",
 			"date" : "<%= vo.getWdate() %>"
 	}

@@ -2,7 +2,36 @@
  * 
  */
 
-currentPage = 3;
+currentPage = 1;
+
+deleteBoard = function () {
+	$.get (
+			'/board/DeleteBoard.do',
+			{'num' : vidx},
+			function (res) {
+				
+			},
+			'json'
+	)
+}
+
+
+
+insertBoard = function () {
+	$.post(
+			'/board/Insert.do',
+			$('#wform').serializeJSON(),
+			function (res) {
+				//alert(res.sw);
+				//전송 성공 했을때 모달 창 닫기
+				$('#writeModal').modal('hide');
+				$('.txt').val("");
+				readPageServer(1);
+			},
+			'json'
+			
+	)
+}
 
 readPageServer = function (cpage) {
 	
@@ -31,8 +60,8 @@ readPageServer = function (cpage) {
 				code += '		</p>';
 
 				code += '		<p class="p2">';
-				code += '			<button type="button" name="modify" class="action">수정</button>';
-				code += '			<button type="button" name="delete" class="action">삭제</button>';
+				code += '			<button idx="' + v.num + '" type="button" name="modify" class="action">수정</button>';
+				code += '			<button idx="' + v.num + '" type="button" name="delete" class="action">삭제</button>';
 				code += '		</p>';
 
 				code += '		<p class="p3">';
@@ -41,7 +70,7 @@ readPageServer = function (cpage) {
 
 				code += '		<p class="p4">';
 				code += '			<textarea cols="60"></textarea>';
-				code += '			<button type="button" name="reply" class="action">등록</button>';
+				code += '			<button idx="' + v.num + '" type="button" name="reply" class="action">등록</button>';
 				code += '		</p>';
 
 				code += ' 		</div>';
@@ -56,7 +85,7 @@ readPageServer = function (cpage) {
 			$('#pagelist').empty();
 			
 			if(res.startp > 1){
-			 pager ='<ul class="pager">';
+			 pager ='<ul class="pul pager">';
 			 pager +='<li><a class="prev" href="#">Previous</a></li>';
 			 pager +='</ul>';
 			 
@@ -65,7 +94,7 @@ readPageServer = function (cpage) {
 			}
 			
 			//페이지 번호 출력
-			pager = '<ul class="pagination pager">';
+			pager = '<ul class="pul pagination pager">';
 			for(i=res.startp; i<=res.endp; i++){
 				if(currentPage == i){
 					pager += '<li class="active"><a class="paging" href="#">' + i + '</a></li>';
