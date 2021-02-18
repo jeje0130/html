@@ -4,11 +4,54 @@
 
 currentPage = 1;
 
-deleteBoard = function () {
+readHitServer = function (list) {
+	
+}
+
+updateBoard = function (btn) {
+	
+	$.ajax({
+		url : '/board/updateBoard.do',
+		data : $('#mform').serializeJSON(),
+		type : 'post',
+		dataType : 'json',
+		success : function (res) {
+			//alert(res.sw);
+			
+			//화면에서 수정한 값 출력
+			//제목
+			$(parent).find('a').text($('#mform #subject').val());
+			
+			//메일
+			$(parent).find('.wm').text($('#mform #mail').val());
+			
+			//내용
+			cont = $('#mform #content').val();
+			cont = cont.replace(/\r/g, "").replace(/\n/g, "<br>");
+			
+			$(parent).find('.wc').html(cont);
+			
+			//모달창 닫기
+			$('#modiModal').modal('hide');
+			$('#mform .txt').val("");
+			
+		},
+		error : function (xhr) {
+			alert("상태 : " + xhr.status);
+		}
+		
+	})
+}
+
+deleteBoard = function (btn) {
 	$.get (
 			'/board/DeleteBoard.do',
 			{'num' : vidx},
 			function (res) {
+				//alert(res.sw);
+				//화면에서 리스트삭제
+				//$(btn).parents('.panel').remove();
+				readPageServer(currentPage);
 				
 			},
 			'json'
@@ -46,17 +89,17 @@ readPageServer = function (cpage) {
 				code += '<div class="panel panel-default">';
 				code += '	<div class="panel-heading">';
 				code += '		<h4 class="panel-title">';
-				code += '			<a data-toggle="collapse" data-parent="#accordion" href="#collapse' + v.num + '">' + v.subject + '</a>';
+				code += '			<a idx="'+ v.num +'"name="list" class="action" data-toggle="collapse" data-parent="#accordion" href="#collapse' + v.num + '">' + v.subject + '</a>';
 				code += '		</h4>';
 				code += '	</div>';
 				
 				code += '	<div id="collapse' + v.num + '" class="panel-collapse collapse">';
 				code += '	<div class="panel-body">';
 				code += '		<p class="p1">';
-				code += '			작성자 : ' + v.writer + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-				code += '			이메일 : ' + v.mail + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-				code += '			작성일 : ' + v.date + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-				code += '			조회수 : ' + 0 ;
+				code += '			작성자 : <span class="wr">' + v.writer + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+				code += '			이메일 : <span class="wm">' + v.mail + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+				code += '			작성일 : <span class="wd">' + v.date + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+				code += '			조회수 : <span class="wh">' + 0 +'</span>';
 				code += '		</p>';
 
 				code += '		<p class="p2">';
@@ -65,7 +108,7 @@ readPageServer = function (cpage) {
 				code += '		</p>';
 
 				code += '		<p class="p3">';
-				code += 			v.cont;
+				code += '<span class="wc">' + v.cont + '</span>';
 				code += '		</p>';
 
 				code += '		<p class="p4">';

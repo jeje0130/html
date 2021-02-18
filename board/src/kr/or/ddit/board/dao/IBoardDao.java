@@ -18,6 +18,7 @@ public interface IBoardDao {
 	public int insertBoard(BoardVO vo) throws SQLException;
 		
 	//게시글 수정하기
+	public int updateBoard(BoardVO vo) throws SQLException;
 		
 	//게시글 삭제하기
 	public int deleteBoard(int num) throws SQLException; 

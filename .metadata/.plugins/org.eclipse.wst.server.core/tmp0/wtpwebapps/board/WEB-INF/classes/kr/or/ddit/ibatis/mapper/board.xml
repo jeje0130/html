@@ -44,9 +44,22 @@
  	</selectKey>
 </insert>
 
+
+
 <delete id="deleteBoard" parameterClass="int">
  	delete from board1 where num = #data#
 </delete>
+
+
+
+<update id="updateBoard" parameterClass="boardVO">
+ 	update board1 
+ 	   set subject = #subject#, 
+ 		   mail = #mail#,
+ 		   password = #password#,
+ 		   content = #content#
+     where num = #num#
+</update>
 
 </sqlMap>
 

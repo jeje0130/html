@@ -17,6 +17,7 @@ public interface IBoardService {
 	public int insertBoard(BoardVO vo);
 	
 	//게시글 수정하기
+	public int updateBoard(BoardVO vo);
 	
 	//게시글 삭제하기
 	public int deleteBoard(int num); 

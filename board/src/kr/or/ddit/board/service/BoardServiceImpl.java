@@ -100,6 +100,19 @@ public class BoardServiceImpl implements IBoardService {
 		return cnt;
 	}
 
+	@Override
+	public int updateBoard(BoardVO vo) {
+		
+		int cnt = 0;
+		
+		try {
+			cnt = dao.updateBoard(vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
 
 	
 
