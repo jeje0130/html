@@ -57,6 +57,9 @@ label{
 
 <script>
 
+//객체 생성 - 속성과 메소드를 동적으로 추가해서 사용 할 수 있다.
+board = {};
+
 $(function () {
 	//readServer();
 	readPageServer(1);
@@ -118,7 +121,24 @@ $(function () {
 			deleteBoard(this);
 			
 		}else if(vname == "reply"){
-			alert(vidx + "번글에 댓글을 등록합니다.");
+			//alert(vidx + "번글에 댓글을 등록합니다.");
+			
+			//서버로 요청하기 위해서 보낼 데이타 - bonum, cont, name
+			cont = $(this).parent('.p4').find('textarea').val();
+			
+			name1 = String.fromCharCode(Math.floor(Math.random()* 26 + 97));
+			name2 = String.fromCharCode(Math.floor(Math.random()* 26 + 65));
+			name3 = Math.floor(Math.random()* 50 + 20);
+			
+			console.log(name1 + name2 + name3);
+			
+			board.bonum = vidx;
+			board.cont = cont;
+			board.name = name1 + name2 + name3;
+			
+			replySaveServer(this);
+			
+		
 		}else if(vname == "list"){
 			//alert(vidx + "번 글의 조회수 증가와 댓글 목록");
 			vclass = $(this).parents('.panel').find('.in').attr('class');

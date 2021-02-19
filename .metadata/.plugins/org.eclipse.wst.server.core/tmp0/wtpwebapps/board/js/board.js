@@ -4,9 +4,69 @@
 
 currentPage = 1;
 
-readHitServer = function (list) {
+replySaveServer = function (btn) {
+	
+	$.ajax({
+		url : '/board/InsertReply.do',
+		type : 'post',
+		data : board, //board객체 - bonum, cont, name
+		dataType : 'json',
+		success : function (res) {
+			//alert(res.sw);
+			
+			//댓글 등록 후 출력
+			replyListServer(btn);
+			
+		},
+		error : function (xhr){
+			alert("상태 : " + xhr.status);
+		}
+		
+	})
+}
+
+
+replyListServer = function (btn) { //btn : 등록버튼
+	
+	$.ajax({
+		url : '/board/ListReply.do',
+		data : {'bonum' : vidx},
+		success : function (res){
+			alert("성공");
+		},
+		error : function (xhr){
+			alert("상태 : " + xhr.status);
+		},
+		dataType : 'json'
+		
+	})
+	
 	
 }
+
+
+
+readHitServer = function (list) {
+	
+	$.ajax({
+		url : '/board/UpdateHit.do',
+		data : {'num' : vidx},
+		success : function (res) {
+			//alert(res.sw);
+			parent = $(list).parents(".panel");
+			hit = parseInt($(parent).find('.wh').text());
+			
+			//hit을 증가
+			$(parent).find('.wh').text(++hit);
+		},
+		error : function (xhr) {
+			alert("상태 : " + xhr.status);
+		},
+		dataType : 'json'
+	})
+}
+
+
 
 updateBoard = function (btn) {
 	
@@ -42,6 +102,8 @@ updateBoard = function (btn) {
 		
 	})
 }
+
+
 
 deleteBoard = function (btn) {
 	$.get (
@@ -99,7 +161,7 @@ readPageServer = function (cpage) {
 				code += '			작성자 : <span class="wr">' + v.writer + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 				code += '			이메일 : <span class="wm">' + v.mail + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 				code += '			작성일 : <span class="wd">' + v.date + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-				code += '			조회수 : <span class="wh">' + 0 +'</span>';
+				code += '			조회수 : <span class="wh">' + v.hit +'</span>';
 				code += '		</p>';
 
 				code += '		<p class="p2">';

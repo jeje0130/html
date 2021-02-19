@@ -9,6 +9,6 @@
 <typeInfo handle="=prod/D:\/B_Util\/5.ApacheTomcat\/apache-tomcat-7.0.107-windows-x64\/apache-tomcat-7.0.107\/lib\/ecj-4.4.2.jar&lt;org.eclipse.jdt.internal.compiler.apt.dispatch(IProcessorProvider.class[IProcessorProvider" modifiers="1537" timestamp="1605640796000"/>
 <typeInfo handle="=member/src&lt;kr.or.ddit.member.dao{IMemberDao.java[IMemberDao" modifiers="513" timestamp="1612748758004"/>
 <typeInfo handle="=member/src&lt;kr.or.ddit.member.service{IMemberService.java[IMemberService" modifiers="513" timestamp="1612748762558"/>
-<typeInfo handle="=board/src&lt;kr.or.ddit.board.service{IBoardService.java[IBoardService" modifiers="513" timestamp="1613532798753"/>
-<typeInfo handle="=board/src&lt;kr.or.ddit.board.dao{IBoardDao.java[IBoardDao" modifiers="513" timestamp="1613532816077"/>
+<typeInfo handle="=board/src&lt;kr.or.ddit.board.service{IBoardService.java[IBoardService" modifiers="513" timestamp="1613704102851"/>
+<typeInfo handle="=board/src&lt;kr.or.ddit.board.dao{IBoardDao.java[IBoardDao" modifiers="513" timestamp="1613704133203"/>
 </typeInfoHistroy>
