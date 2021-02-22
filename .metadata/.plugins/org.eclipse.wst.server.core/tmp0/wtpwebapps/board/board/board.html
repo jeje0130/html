@@ -53,6 +53,15 @@ label{
 	width: 100px;
 	height: 30px;
 }
+.rep{
+	margin: 10px;
+	padding: 10px;
+	background: #D5C2EE;
+	border: 1px solid gray;
+}
+#modifyForm{
+	display: none;
+}
 </style>
 
 <script>
@@ -147,12 +156,72 @@ $(function () {
 			//vclass가 undefined(닫혀있을때)일때 조회수 증가
 			//undefined는 값이 정해지지않은 자료형(문자X) 비교시 typeof 사용
 			if(typeof vclass == 'undefined'){
+				
 				//조회수 증가
 				readHitServer(this);
 			}
+			replyListServer(this);
+		
+		//댓글 삭제
+		}else if(vname=="r_delete"){
+			deleteReply(this);
+			
+		}else if(vname=="r_modify"){
+			//alert(vidx + "댓글 수정");
+			$(this).prop('disabled', true);
+			
+			//현재 어딘가에 열려있다 = 보이고 있다
+			if($('#modifyForm').css('display') != "none"){
+				//modifyForm의  textarea 내용을 가져온다
+				//원래 span class="cont"에 다시 출력해주고,
+				//modifyForm을 body로 append()한다.
+				replyReset(); //현재 열려있는 modifyForm폼을 닫고 취소버튼 누른 효과 / 원래내용으로 다시 돌아간다.
+				
+				
+				
+			} //안보이는 상태
+				
+				//원래 내용(수정할 내용) 가져오기
+				modifycont = $(this).parents('.rep').find('.cont').html();
+				
+				//br태그를 \n으로 변경
+				modifycont = modifycont.replace(/<br>/g,"\n");
+				
+				//modifyForm
+				$('#modifyForm > textarea').val(modifycont);
+				
+				//modifyForm 보이기
+				$(this).parents('.rep').find('.cont').empty();
+				$(this).parents('.rep').find('.cont').append($('#modifyForm'));
+				$('#modifyForm').show();
+			
+			
 		}
 		
 	})
+	
+	
+	
+	//열려있는 수정폼 닫기
+	replyReset = function () {
+		spancont = $('#modifyForm').parent(); //span태그 - 댓글내용
+		
+		//수정폼을 다시 body로 append 잘라서 붙여넣기 한다.
+		$('body').append('#modifyForm');
+		$('#modifyForm').hide();
+		
+		
+		//원래 내용을 가져와서 수정폼에 출력하기 위해서
+		//br태그를 \n으로 바꾼적이 있는 것을 다시 span태그로 출력하기 위해 <br>로 변경
+		modifycont = modifycont.replace(/\n/g,"<br>");
+		
+		$(spancont).append(modifycont); //수정창에 있는 글 내용
+		
+	}
+	
+	
+	
+	
 	
 	// 전송 버튼에 대한 이벤트 (게시글 등록)
 	$('#wsend').on('click', function () {
@@ -176,6 +245,14 @@ $(function () {
 
 </head>
 <body>
+
+<!-- 댓글 수정폼 -->
+<div id="modifyForm">
+	<textarea rows="5" cols="40"></textarea>
+	<input type="button" value="확인" id="modiok">
+	<input type="button" value="취소" id="modireset">
+</div>
+
 
 <h2>게시판</h2>
 <br>

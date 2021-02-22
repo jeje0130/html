@@ -27,8 +27,10 @@ public interface IBoardService {
 	public int insertReply(ReplyVO vo);
 	
 	//댓글 수정하기
+	public int updateReply(ReplyVO vo);
 	
 	//댓글 삭제하기
+	public int deleteReply(int renum);
 	
 	//댓글 리스트 가져오기
 	public List<ReplyVO> listReply(int bonum);

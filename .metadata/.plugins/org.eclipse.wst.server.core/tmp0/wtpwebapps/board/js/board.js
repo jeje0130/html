@@ -4,6 +4,27 @@
 
 currentPage = 1;
 
+deleteReply = function (btn) {
+	
+	$.ajax({
+		url : '/board/DeleteReply.do',
+		type : 'get',
+		data : {'renum' : vidx},
+		dataType : 'json',
+		success : function (res) {
+			//alert(res.sw);
+			
+			$(btn).parents('.rep').remove();
+		},
+		error : function (xhr){
+			alert("상태 : " + xhr.status);
+		}
+		
+	})
+}
+
+
+
 replySaveServer = function (btn) {
 	
 	$.ajax({
@@ -25,14 +46,32 @@ replySaveServer = function (btn) {
 	})
 }
 
-
+//등록버튼 클릭, 제목 클릭 할때
 replyListServer = function (btn) { //btn : 등록버튼
 	
 	$.ajax({
 		url : '/board/ListReply.do',
 		data : {'bonum' : vidx},
 		success : function (res){
-			alert("성공");
+			//alert("성공");
+			recode = "";
+			
+			$.each(res, function (i, v) {
+				recode += '	<div class="panel-body rep">';
+				recode += '		<p class="p1">';
+				recode +=  v.name + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+				recode +=  v.redate + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+				recode += '<br><br><span class="cont">' + v.cont + '</span>';
+				recode += '		</p>';
+
+				recode += '		<p class="p2">';
+				recode += '			<button idx="' + v.renum + '" type="button" name="r_modify" class="action">댓글 수정</button>';
+				recode += '			<button idx="' + v.renum + '" type="button" name="r_delete" class="action">댓글 삭제</button>';
+				recode += '		</p>';
+				recode += '	</div>';
+			})
+			$(btn).parents('.panel').find('.rep').remove();
+			$(btn).parents('.panel').find('.pbody').append(recode);
 		},
 		error : function (xhr){
 			alert("상태 : " + xhr.status);
@@ -156,7 +195,7 @@ readPageServer = function (cpage) {
 				code += '	</div>';
 				
 				code += '	<div id="collapse' + v.num + '" class="panel-collapse collapse">';
-				code += '	<div class="panel-body">';
+				code += '	<div class="panel-body pbody">';
 				code += '		<p class="p1">';
 				code += '			작성자 : <span class="wr">' + v.writer + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 				code += '			이메일 : <span class="wm">' + v.mail + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';

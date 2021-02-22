@@ -40,7 +40,7 @@ public class InsertReply extends HttpServlet {
 		//4. 결과값을 request에 저장 
 		request.setAttribute("abc", renum);
 				
-		//5. view페이지로(jsp) forward - result.jap한다.
+		//5. view페이지로(jsp) forward - result.jsp한다.
 		RequestDispatcher disp = request.getRequestDispatcher("board/result.jsp");
 				
 		disp.forward(request, response);
