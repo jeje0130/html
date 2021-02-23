@@ -4,6 +4,18 @@
 
 currentPage = 1;
 
+
+updateReply = function () {
+	$.ajax({
+		url : '/board/UpdateReply.do',
+		type : 'post',
+		data : reply, //reply객체
+		dataType : 'json'		
+	})
+}
+
+
+
 deleteReply = function (btn) {
 	
 	$.ajax({
@@ -65,8 +77,8 @@ replyListServer = function (btn) { //btn : 등록버튼
 				recode += '		</p>';
 
 				recode += '		<p class="p2">';
-				recode += '			<button idx="' + v.renum + '" type="button" name="r_modify" class="action">댓글 수정</button>';
-				recode += '			<button idx="' + v.renum + '" type="button" name="r_delete" class="action">댓글 삭제</button>';
+				recode += '			<button id="rmodi" idx="' + v.renum + '" type="button" name="r_modify" class="action btn btn-success">댓글 수정</button><br><br>';
+				recode += '			<button idx="' + v.renum + '" type="button" name="r_delete" class="action btn btn-danger">댓글 삭제</button>';
 				recode += '		</p>';
 				recode += '	</div>';
 			})
