@@ -1,7 +1,0 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%
-	//서블릿에서 실행된 결과값가져오기
-	request.getAttribute("abc");
-
-%>
